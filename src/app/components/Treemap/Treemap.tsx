@@ -14,19 +14,14 @@ interface TreemapProps {
 }
 
 const Treemap: React.FC<TreemapProps> = ({data, rowNumber}) => {
-  // Sort data in descending order based on weight
   const sortedData = [...data].sort((a, b) => b.weight - a.weight);
 
   const itemsPerRow = Math.ceil(sortedData.length / rowNumber);
 
-  // Split data into rows
   const rows = [];
   for (let i = 0; i < rowNumber; i++) {
     rows.push(sortedData.slice(i * itemsPerRow, (i + 1) * itemsPerRow));
   }
-
-  // Calculate total weight for all items
-  const totalWeight = sortedData.reduce((sum, item) => sum + item.weight, 0);
 
   if (data.length === 0) {
     return (
@@ -39,14 +34,13 @@ const Treemap: React.FC<TreemapProps> = ({data, rowNumber}) => {
   return (
       <div className={styles.treemapContainer}>
         {rows.map((row, rowIndex) => {
-          // Calculate total weight for this row
           const totalRowWeight = row.reduce((sum, item) => sum + item.weight, 0);
 
           return (
               <div key={rowIndex} className={styles.treemapRow}>
                 {row.map((item, index) => {
-                  // Calculate width based on item's weight relative to total weight
                   const width = (item.weight / totalRowWeight) * 100;
+                  const tooltip = `Name: ${item.name}\nValue: ${item.value}\nWeight: ${item.weight}`;
 
                   return (
                       <TreemapItem
@@ -54,6 +48,7 @@ const Treemap: React.FC<TreemapProps> = ({data, rowNumber}) => {
                           name={item.name}
                           width={width}
                           value={item.value}
+                          title={tooltip}
                       />
                   );
                 })}

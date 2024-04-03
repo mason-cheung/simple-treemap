@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import styles from './treemapItem.module.css';
 import useCheckScreenSize from "@/app/hooks/useCheckScreenSize";
 
@@ -6,9 +6,11 @@ interface TreemapItemProps {
   name: string;
   width: number;
   value: number;
+  title?: string;
 }
 
-const TreemapItem: React.FC<TreemapItemProps> = ({name, width, value}) => {
+const TreemapItem: React.FC<TreemapItemProps> = (props) => {
+  const {name, width, value, title} = props;
   const screenSize = useCheckScreenSize();
   const newValue = value * 100
 
@@ -30,17 +32,18 @@ const TreemapItem: React.FC<TreemapItemProps> = ({name, width, value}) => {
 
 
   return (
-      <rect
+      <div
           className={styles.treemapItem}
           style={{
             width: `${width}%`,
             height: height,
             backgroundColor: color,
           }}
+          title={title}
       >
-        <div>{name}</div>
-        <div>{parseFloat(newValue.toFixed(2))}%</div>
-      </rect>
+        <div style={{fontSize: 20}}>{name}</div>
+        <div style={{fontSize: 16}}>{parseFloat(newValue.toFixed(2))}%</div>
+      </div>
   );
 };
 
