@@ -1,0 +1,27 @@
+.treemapContainer {
+  margin-top: 0.5rem;
+  border: 2px solid #ababab;
+  width: 100%;
+}
+
+.treemapRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.emptyDataContainer {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .treemapContainer {
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .treemapContainer {
+    box-sizing: border-box;
+  }
+}

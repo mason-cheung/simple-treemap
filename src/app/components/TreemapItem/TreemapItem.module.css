@@ -1,0 +1,15 @@
+.treemapItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+  box-sizing: border-box;
+}
+

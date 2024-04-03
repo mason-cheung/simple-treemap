@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Override the default configuration for the "jsx" option.
+    "jsx": "react"
+  }
+}

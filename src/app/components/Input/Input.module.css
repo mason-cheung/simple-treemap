@@ -1,0 +1,17 @@
+.inputContainer {
+  width: 100%;
+}
+
+.input {
+  margin-top: 0.5rem;
+  padding: 10px;
+  border: 2px solid #ababab;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}

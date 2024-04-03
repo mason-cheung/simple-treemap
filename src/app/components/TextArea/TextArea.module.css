@@ -1,0 +1,48 @@
+.textareaContainer {
+  width: 100%;
+}
+
+.textarea {
+  margin-top: 0.5rem;
+  padding: 10px;
+  border: 2px solid #ababab;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+  height: 300px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .textareaContainer {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 175px;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .textareaContainer {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 225px;
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
